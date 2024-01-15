@@ -153,6 +153,7 @@ export abstract class RequestHandler<
    */
   abstract log(args: {
     request: Request
+    requestId: string
     response: Response
     parsedResult: ParsedResult
   }): void

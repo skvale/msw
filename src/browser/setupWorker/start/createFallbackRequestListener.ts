@@ -33,6 +33,7 @@ export function createFallbackRequestListener(
             context.emitter.once('response:mocked', ({ response }) => {
               handler.log({
                 request: requestCloneForLogs,
+                requestId,
                 response,
                 parsedResult,
               })

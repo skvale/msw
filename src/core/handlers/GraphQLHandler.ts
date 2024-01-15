@@ -239,6 +239,7 @@ Consider naming this operation or using "graphql.operation()" request handler to
 
   async log(args: {
     request: Request
+    requestId: string
     response: Response
     parsedResult: GraphQLRequestParsedResult
   }) {
@@ -259,6 +260,7 @@ Consider naming this operation or using "graphql.operation()" request handler to
       'color:inherit',
     )
     console.log('Request:', loggedRequest)
+    console.log('Request Id:', args.requestId)
     console.log('Handler:', this)
     console.log('Response:', loggedResponse)
     console.groupEnd()

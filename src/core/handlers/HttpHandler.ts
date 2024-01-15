@@ -146,7 +146,7 @@ export class HttpHandler extends RequestHandler<
     }
   }
 
-  async log(args: { request: Request; response: Response }) {
+  async log(args: { request: Request; requestId: string; response: Response }) {
     const publicUrl = getPublicUrlFromRequest(args.request)
     const loggedRequest = await serializeRequest(args.request)
     const loggedResponse = await serializeResponse(args.response)
@@ -162,6 +162,7 @@ export class HttpHandler extends RequestHandler<
       'color:inherit',
     )
     console.log('Request', loggedRequest)
+    console.log('Request Id:', args.requestId)
     console.log('Handler:', this)
     console.log('Response', loggedResponse)
     console.groupEnd()
